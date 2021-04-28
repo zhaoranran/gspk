@@ -1,43 +1,11 @@
-// pages/home/home.js
+// pages/register/register.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo:{
-      picture:'http://gsyh.scleysion.com:888/files/logo2.png',
-      name:'小赵',
-      rank:'青铜',
-      score:'50'
-    },
-    time:'04-28 00:00:00',
-    list:[
-    {
-      title:'签到',
-      icon:'http://gsyh.scleysion.com:888/files/sign.png',
-    },
-    {
-      title:'党务知识学习',
-      icon:'http://gsyh.scleysion.com:888/files/xx.png',
-    },
-    {
-      title:'时代楷模排位',
-      icon:'http://gsyh.scleysion.com:888/files/pw.png',
-    },
-    {
-      title:'党建先锋榜',
-      icon:'http://gsyh.scleysion.com:888/files/bang.png',
-    },
-    {
-      title:'预赛赛制公告',
-      icon:'http://gsyh.scleysion.com:888/files/gg.png',
-    },
-    {
-      title:'设置',
-      icon:'http://gsyh.scleysion.com:888/files/sz.png',
-    },
-    ]
+
   },
 
   /**

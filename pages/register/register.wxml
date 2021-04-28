@@ -1,0 +1,8 @@
+<view class="register">
+  <view class="logo"></view>
+  <view class="text">
+    恭喜您，注册成功
+  </view>
+  <view class="btn"></view>
+
+</view>

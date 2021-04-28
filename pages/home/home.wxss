@@ -3,4 +3,124 @@
   width: 100%;
   height: 100%;
   background:url(http://gsyh.scleysion.com:888/files/bg-c.png) no-repeat 0 0;
+  background-size:100% 100%;
+  overflow:auto;
+  padding-bottom:30rpx;
 }
+.user-info{
+  width:680rpx;
+  height: 250rpx;
+  background:url(http://gsyh.scleysion.com:888/files/user-bg.png) no-repeat;
+  background-size:100% 100%;
+  margin:0 auto;
+  padding:40rpx 20rpx;
+}
+.logo{
+  width:250rpx;
+  height: 55rpx;
+}
+.user-header{
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  margin-top:-40rpx;
+  color:#fff;
+  font-size:30rpx;
+  font-weight: 600;
+}
+.user-header image{
+  width: 90rpx;
+  height: 90rpx;
+  margin:0 auto;
+  margin-bottom:10rpx;
+}
+.info{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin:40rpx 40rpx 0;
+  color:#fff;
+  font-size:26rpx;
+}
+.banner{
+  display:flxe;
+  width:680rpx;
+  height: 180rpx;
+  background:url(http://gsyh.scleysion.com:888/files/banner-bg.png) no-repeat 0 0;
+  background-size:100% 100%;
+  margin:10rpx auto;
+  padding:35rpx 20rpx;
+  color:#fff;
+}
+.banner-title{
+  font-size:34rpx;
+  text-align:center;
+}
+
+.banner-info{
+  display: flex;
+  justify-content: space-between;
+  align-items:flex-end;
+  margin:80rpx 20rpx 0;
+  font-size: 28rpx;
+}
+.list{
+  padding:0rpx 20rpx;
+  color:#fff;
+  font-size: 34rpx;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap:wrap;
+}
+.list-item{
+  width: 41%;
+  height: 150rpx;
+  padding:30rpx 30rpx;
+  position: relative;
+}
+.list-item:first-child{
+  background:url(http://gsyh.scleysion.com:888/files/qiandao.png) no-repeat 0 0;
+  background-size:100% 100%;
+}
+.list-item:nth-child(2){
+  background:url(http://gsyh.scleysion.com:888/files/dwzs.png) no-repeat 0 0;
+  background-size:100% 100%;
+}
+.list-item:nth-child(3){
+  background:url(http://gsyh.scleysion.com:888/files/sdkm.png) no-repeat 0 0;
+  background-size:100% 100%;
+}
+.list-item:nth-child(4){
+  background:url(http://gsyh.scleysion.com:888/files/djcf.png) no-repeat 0 0;
+  background-size:100% 100%;
+}
+.list-item:nth-child(5){
+  width:55%;
+  background:url(http://gsyh.scleysion.com:888/files/ysgg.png) no-repeat 0 0;
+  background-size:100% 100%;
+}
+.list-item:nth-child(6){
+  width:25%;
+  background:url(http://gsyh.scleysion.com:888/files/sz-bg.png) no-repeat 0 0;
+  background-size:100% 100%;
+}
+.list-item:nth-child(3) .item-icon{
+  height: 60rpx;
+  width: 120rpx;
+}
+.list-item:nth-child(4) .item-icon{
+  height: 120rpx;
+}
+.list-item:nth-child(5) .item-icon{
+  height: 120rpx;
+  width: 120rpx;
+}
+.item-icon{
+  width: 90rpx;
+  height: 80rpx;
+  position: absolute;
+  right: 60rpx;
+  bottom:40rpx;
+}
+

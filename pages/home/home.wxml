@@ -1,3 +1,40 @@
 <view class="home">
-
+<view class="user-info">
+  <view class="logo">
+    <image src="../../assets/images/logo4.png"></image>
+  </view>
+  <view class="user-header">
+    <image src="{{userInfo.picture}}"></image>
+    <text>{{userInfo.name}}</text>
+  </view>
+  <view class="info">
+    <view class="">
+      <van-icon name="http://gsyh.scleysion.com:888/files/v.png" />
+      <text>{{userInfo.rank}}</text>
+    </view>
+    <view class="">
+      <van-icon name="http://gsyh.scleysion.com:888/files/start.png" />
+      <text>{{userInfo.score}}</text>
+    </view>
+  </view>
+</view>
+<view class="banner">
+  <view class="banner-title">重温党史辉煌 · 凝聚奋进力量：线上预赛</view>
+  <view class="banner-info">
+    <text>当前参赛人数：5823人</text>
+    <van-count-down time="{{ time }}" format="DD 天 HH 时 mm 分 ss 秒" />
+  </view>
+</view>
+<view class="list">
+  <view 
+    wx:for="{{list}}" 
+    wx:key="index"
+    class="list-item" >
+      <text>{{item.title}}</text>
+      <view class="item-icon">
+        <image src="{{item.icon}}"></image>
+        <text></text>
+      </view>
+  </view>
+</view>
 </view>
