@@ -1,0 +1,93 @@
+<!--pages/login/login.wxml-->
+<view class="login-content">
+  <image class="login-bg" src='../../assets/images/login-bg.png'></image>
+  <view class="login-box">
+    <view class="logo">
+      <image src="../../assets/images/logo.png"></image>
+    </view>
+    <view class="login-text">
+      <text>中国工商银行四川省分行</text>
+      <text>庆祝建党100周年</text>
+      <text>知识竞赛</text>
+    </view>
+    <view class="register-btn" bindtap="showPopup">
+      <image src="../../assets/images/register-btn.png"></image>
+    </view>
+  </view>
+  <van-popup 
+    show="{{ show }}" 
+    bind:close="onClose"
+    custom-style="width:80%;height:auto;padding:50rpx;border-radius:18rpx;top:40%;background:#f5f5f5;"
+    round="true">
+    <view class="modal-box">
+      <view class="login-form">
+        <view class="login-item">
+          <view class="item-icon">
+            <image src="../../assets/images/user-icon.png"></image>
+          </view>
+          <van-field
+            value="{{ username }}"
+            placeholder="请输入用户名"
+            border="{{ false }}"
+            bind:change="onChange"
+            placeholder-style="color:#5e5e5e;font-size:30rpx;"
+          />
+        </view>
+        <view class="login-item">
+          <view class="item-icon">
+            <image src="../../assets/images/fx-icon.png"></image>
+          </view>
+          <van-field
+            value="{{ username }}"
+            placeholder="请选择分行"
+            border="{{ false }}"
+            right-icon="arrow"
+            readonly
+            bind:change="onChange"
+            bind:click-input="getFxDate"
+            bind:click-icon="getFxDate"
+            placeholder-style="color:#5e5e5e;font-size:30rpx;"
+          />
+        </view>
+        <view class="login-item">
+          <view class="item-icon">
+            <image src="../../assets/images/zh-icon.png"></image>
+          </view>
+          <view>
+            <van-field
+            value="{{ username }}"
+            placeholder="请输入部门(支行)"
+            border="{{ false }}"
+            bind:change="onChange"
+            placeholder-style="color:#5e5e5e;font-size:30rpx;"
+          />
+          <text class="sub-text">（如春熙路支行）</text>
+          </view>
+        </view>
+      </view>
+      <view class="login-radio">
+        <van-checkbox icon-class="vant-radio" icon-size="15px" value="{{ checked }}" bind:change="radioChange">我已仔细阅读并同意</van-checkbox>
+          <text class="ysxy">《隐私协议》</text>
+      </view>
+      <view class="login-btn">完成注册</view>
+    </view>
+  </van-popup>
+  <van-popup
+  class="fx-popup"
+    show="{{ showFx }}" 
+    bind:close="fxOnClose"
+    overlay="false"
+    custom-style="background-color:transparent"
+    custom-style="top:43%;width:70%;height:auto;padding:40rpx;border-radius:18rpx;background:#f8f8f8;box-shadow:10rpx 10rpx 10px #999;"
+    round="true">
+    <view class="fx-list">
+      <view class="fx-item"
+      wx:for="{{fxDate}}" 
+      wx:key="{{item.id}}">
+        <view>{{item.text}}</view>
+      </view>
+    </view>
+  </van-popup>
+
+  
+</view>
