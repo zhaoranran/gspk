@@ -1,0 +1,28 @@
+<view class="pk-home">
+  <view class="logo">
+    <image src="../../assets/images/logo4.png"></image>
+  </view>
+  <view class="pk-box">
+    <view class="pk-l">
+      <view class="pk-header">
+        <image src="{{userInfo[0].picture}}"></image>
+      </view>
+      <view class="pk-name">{{userInfo[0].name}}</view>
+      <view class="pk-leveal">{{userInfo[0].leveal}}</view>
+      <view class="pk-dw">段位 {{userInfo[0].dw}}</view>
+      <view class="pk-name2">{{userInfo[0].deptName}}</view>
+    </view>
+    <view class="pk-c">
+      <image src="https://free.liaoningdoupo.com/files/vs2.png"></image>
+    </view>
+    <view  class="pk-r">
+      <view class="pk-header">
+        <image src="{{userInfo[0].picture}}"></image>
+      </view>
+      <view class="pk-name">{{userInfo[0].name}}</view>
+      <view class="pk-leveal">{{userInfo[0].leveal}}</view>
+      <view class="pk-dw">段位 {{userInfo[0].dw}}</view>
+      <view class="pk-name2">{{userInfo[0].deptName}}</view>
+    </view>
+  </view>
+</view>

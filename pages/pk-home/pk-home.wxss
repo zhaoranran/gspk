@@ -1,0 +1,83 @@
+/* pages/pk-home/pk-home.wxss */
+
+.pk-home{
+  width: 100%;
+  height: 100%;
+  background:url(https://free.liaoningdoupo.com/files/pk-bg.png) no-repeat 0 0;
+  background-size:100% 100%;
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  color:#fff;
+  font-size:40rpx;
+}
+.text{
+  font-size: 48rpx;
+}
+.logo{
+  width:45%;
+  height: 70rpx;
+  margin:40rpx 0 80rpx;
+}
+.pk-l{
+  left: 0;
+  top:15%;
+  background: url(https://free.liaoningdoupo.com/files/hong.png) no-repeat top left;
+  background-size: 100% 100%;
+}
+.pk-r{
+  right: 0;
+  top:40%;
+  background: url(https://free.liaoningdoupo.com/files/lan.png) no-repeat top right;
+  background-size: 100% 100%;
+  z-index: 1;
+}
+.pk-l,.pk-r{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color:#fff;
+  font-size: 28rpx;
+  font-weight: 100;
+  width: 320rpx;
+  height: 480rpx;
+  line-height: 50rpx;
+  text-align: center;
+}
+.pk-l >view{
+  margin-left: -95rpx;
+}
+.pk-r >view{
+  margin-left: 130rpx;
+}
+.pk-header{
+  width:68rpx;
+  height: 68rpx;
+  margin:20rpx 0;
+}
+.pk-name{
+  font-weight: 700;
+  font-size:38rpx;
+  width:150rpx;
+  border-bottom:1rpx solid #fff;
+  padding-bottom:20rpx;
+  margin-bottom:15rpx;
+}
+.pk-r .pk-header{
+  margin-top:-75rpx;
+}
+.pk-c{
+  width: 296rpx;
+  height: 367rpx;
+  position: absolute;
+  left:50%;
+  top:50%;
+  bottom:50%;
+  right: 50%;
+  margin-left:-148rpx;
+  margin-top:-184rpx;
+  z-index: 2;
+}

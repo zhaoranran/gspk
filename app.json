@@ -1,8 +1,9 @@
 {
   "pages": [
+   
+    "pages/pk-home/pk-home",
     "pages/home/home",
     "pages/register/register",
-    
     "pages/login/login",
     "pages/index/index",
     "pages/logs/logs"

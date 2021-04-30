@@ -9,11 +9,11 @@
   </view>
   <view class="info">
     <view class="">
-      <van-icon name="http://gsyh.scleysion.com:888/files/v.png" />
+      <van-icon name="https://free.liaoningdoupo.com/files/v.png" />
       <text>{{userInfo.rank}}</text>
     </view>
     <view class="">
-      <van-icon name="http://gsyh.scleysion.com:888/files/start.png" />
+      <van-icon name="https://free.liaoningdoupo.com/files/start.png" />
       <text>{{userInfo.score}}</text>
     </view>
   </view>

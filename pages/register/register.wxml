@@ -1,8 +1,10 @@
 <view class="register">
-  <view class="logo"></view>
+  <view class="logo">
+    <image src="../../assets/images/logo4.png"></image>
+  </view>
   <view class="text">
     恭喜您，注册成功
   </view>
-  <view class="btn"></view>
+  <view class="btn">进入</view>
 
 </view>
