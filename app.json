@@ -1,6 +1,7 @@
 {
   "pages": [
-   
+    "pages/exam-success/exam-success",
+    "pages/exam/exam",
     "pages/pk-home/pk-home",
     "pages/home/home",
     "pages/register/register",

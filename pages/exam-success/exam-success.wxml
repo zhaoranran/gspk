@@ -1,0 +1,11 @@
+<view class="exama-success">
+  <view class="success">
+    <view class="success-logo" wx:if="isTrue">
+      <image src="https://free.liaoningdoupo.com/files/{{isTrue?'ying':'ku'}}.png"></image>
+    </view>
+    <view class="sum" wx:if="{{isTrue}}">+10积分</view>
+    <view class="exam-title">答题{{isTrue?'成功':'失败'}}</view>
+    <view class="exam-title2" wx:if="{{isTrue}}">恭喜答题成功，太棒啦!</view>
+    <view class="show-btn">分享好友</view>
+  </view>
+</view>

@@ -1,0 +1,21 @@
+<view class="exam">
+  <view class="time"><text>倒计时</text>{{time}}</view>
+  <view class="exam-box">
+    <view class="exam-title">{{exam.examTitle}}</view>
+    <view class="exam-list" wx:for="{{exam.examList}}" wx:key="indx">
+      <view class="item isTrue isFalse" data-id="{{indx}}"  bindtap="examTap">
+        <text class="round"></text>
+        <van-icon size="10" custom-style="position:absolute;left:20rpx;top:27rpx;" name="https://free.liaoningdoupo.com/files/cuo.png" />
+        {{item.exam}}
+      </view>
+      <view class="item isTrue" data-id="{{indx}}"  bindtap="examTap">
+        <text class="round"></text>
+        <van-icon size="10" custom-style="position:absolute;left:23rpx;top:23rpx;" name="https://free.liaoningdoupo.com/files/dui.png" />
+        {{item.exam}}
+      </view>
+    </view>
+  </view>
+  <view class="exam-tip">答题时间为<text>10分钟</text>，请把我好时间</view>
+  <view class="exam-btn">下一题</view>
+</view>
+

@@ -1,0 +1,52 @@
+/* pages/exam-success/exam-success.wxss */
+.exama-success{
+  width: 100%;
+  height: 100%;
+  background:url(https://free.liaoningdoupo.com/files/bg-x.png) no-repeat 0 0;
+  background-size:100% 100%;
+  overflow:auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.success{
+  width: 80%;
+  height: auot;
+  background:#fff;
+  border-radius: 16rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.success-logo{
+  width:386rpx;
+  height: 303rpx;
+  margin:100rpx 0 20rpx;
+}
+.sum{
+  color:#eeb118;
+  font-size: 28rpx;
+}
+.exam-title{
+  margin:20rpx 0;
+  font-size: 36rpx;
+  font-weight: 600;
+  color:#000;
+}
+.exam-title2{
+  font-size: 28rpx;
+  color:#707070;
+
+}
+.show-btn{
+  font-size: 34rpx;
+  color:#fff;
+  background:#f9a038;
+  width:75%;
+  height: 98rpx;
+  text-align: center;
+  line-height: 98rpx;
+  border-radius: 25px;
+  margin:30rpx 0 80rpx;
+}
