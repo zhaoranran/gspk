@@ -1,0 +1,29 @@
+<view class="pk-press">
+  <view class="pk-user">
+    <view class="user-l">
+      <text>小商</text>
+      <image class="user-header" src="https://free.liaoningdoupo.com/files/logo2.png"></image>
+    </view>
+    <view class="user-c">
+      <view class="time">03:00</view>
+    </view>
+    <view class="user-r">
+      <image class="user-header" src="https://free.liaoningdoupo.com/files/logo2.png"></image>
+      <text>小商</text>
+    </view>
+  </view>
+  <view class="pk-title">
+    从飞行员的位置来看，红灯航信灯总是装在</view>
+  <view class="pk-box">
+    <view class="press">
+      <view class="press-num"></view>
+    </view>
+    <view class="exam">
+      <view class="exam-item">飞机的头部</view>
+      <view class="exam-item">飞机的头部</view>
+      <view class="exam-item">飞机的头部</view>
+      <view class="exam-item">飞机的头部</view>
+    </view>
+    <view class="press"></view>
+  </view>
+</view>

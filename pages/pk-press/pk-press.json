@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "时代楷模排位赛",
+  "usingComponents": {
+    "van-progress": "vant-weapp/progress/index"
+  }
+}

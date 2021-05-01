@@ -1,0 +1,115 @@
+/* pages/pk-press/pk-press.wxss */
+
+.pk-press{
+  width: 100%;
+  height: 100%;
+  background:url(https://free.liaoningdoupo.com/files/pk-bg.png) no-repeat 0 0;
+  background-size:100% 100%;
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  color:#fff;
+  font-size:40rpx;
+}
+.pk-user{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.user-l, .user-r{
+  width: 28%;
+  height: 140rpx;
+  line-height: 140rpx;
+  background: url(https://free.liaoningdoupo.com/files/hf.png);
+  background-size:100% 100%;
+  font-size: 30rpx;
+  /* padding:0 40rpx; */
+  display: flex;
+  align-items: center;
+}
+.user-header{
+  width: 80rpx;
+  height: 80rpx;
+}
+.user-l text{
+  margin-left: 40rpx;
+  margin-right: 15rpx;
+}
+.user-r{
+  background: url(https://free.liaoningdoupo.com/files/lf.png);
+  background-size:100% 100%;
+  padding-left: 30rpx;
+}
+.user-r text{
+  margin-left: 15rpx;
+}
+.user-c{
+  background:#fff;
+  width:180rpx;
+  height: 80rpx;
+  border-radius: 25rpx;
+  text-align: center;
+  line-height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.time{
+  width:160rpx;
+  height: 70rpx;
+  background:#9a00ff;
+  border-radius: 25rpx;
+  font-size: 32rpx;
+}
+.pk-title{
+  font-size: 30rpx;
+  color:rgba(255,255,255,.8);
+  margin-top:100rpx;
+  margin-bottom:100rpx;
+}
+.pk-box{
+  width: 100%;
+  height: 500rpx;
+  margin:0 50rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.exam{
+  width:40%;
+}
+.exam-item{
+  width:400rpx;
+  margin-left: -50rpx;
+  margin-bottom:30rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  color:#747474;
+  font-size:30rpx;
+  text-align: center;
+  background:#fff;
+  border-radius: 25px;
+}
+.press{
+  width:40rpx;
+  height: 500rpx;
+  margin:0 50rpx;
+  background:transparent;
+  border:1px solid rgba(255,255,255,.8);
+  border-radius: 25px;
+  position: relative;
+}
+.press-num{
+  background: #fff;
+  position: absolute;
+  bottom:0;
+  left:0;
+  right: 0;
+  width: 45rpx;
+  left: -0.3rpx;
+  height: 100rpx;
+  border-radius: 25px;
+
+}
