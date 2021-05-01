@@ -1,0 +1,27 @@
+<view class="challenge">
+  <view class="pk-user">
+    <view class="user-l">
+      <text>第二题</text>
+    </view>
+    <view class="user-c">
+      <view class="time">0</view>
+    </view>
+    <view class="user-r">
+      <van-icon custom-style="margin-top:50rpx;" name="contact" size="20px"/>
+      <text>剩余98</text>
+    </view>
+  </view>
+  <view class="is-success" wx:if="{{isSuccess}}">
+    <view class="isSuccess-image"><text>挑战成功</text></view>
+    <view class="info">恭喜五连胜！</view>
+    <view class="sum">积分+10</view>
+  </view>
+  <view class="is-success {{isSuccess?'':'low'}}" wx:else>
+    <view class="isSuccess-image"><text>挑战失败</text></view>
+    <view class="sum">加油哦！</view>
+  </view>
+  <view class="btns">
+    <view class="go-on">继续挑战</view>
+    <view class="show">分享战绩</view>
+  </view>
+</view>
