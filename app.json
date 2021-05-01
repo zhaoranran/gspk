@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/new-date/new-date",
     "pages/exam-success/exam-success",
     "pages/exam/exam",
     "pages/pk-home/pk-home",
