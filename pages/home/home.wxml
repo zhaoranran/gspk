@@ -9,11 +9,11 @@
   </view>
   <view class="info">
     <view class="">
-      <van-icon name="https://free.liaoningdoupo.com/files/v.png" />
+      <van-icon name="{{iconV}}" />
       <text>{{userInfo.rank}}</text>
     </view>
     <view class="">
-      <van-icon name="https://free.liaoningdoupo.com/files/start.png" />
+      <van-icon name="{{iconStart}}" />
       <text>{{userInfo.score}}</text>
     </view>
   </view>
@@ -21,7 +21,7 @@
 <view class="banner">
   <view class="banner-title">重温党史辉煌 · 凝聚奋进力量：线上预赛</view>
   <view class="banner-info">
-    <text>当前参赛人数：5823人</text>
+    <text>当前参赛人数：{{userCount}}人</text>
     <van-count-down time="{{ time }}" format="DD 天 HH 时 mm 分 ss 秒" />
   </view>
 </view>
@@ -29,12 +29,61 @@
   <view 
     wx:for="{{list}}" 
     wx:key="index"
-    class="list-item" >
+    class="list-item" bindtap="{{item.onFun}}">
+    <view>
       <text>{{item.title}}</text>
       <view class="item-icon">
         <image src="{{item.icon}}"></image>
         <text></text>
       </view>
+    </view>
   </view>
 </view>
+<van-popup 
+custom-class="home-popup" 
+closeable
+close-icon="close"
+custom-style="background:url(https://free.liaoningdoupo.com/files/sign-bg.png) no-repeat 0 0 ;margin:0 auto;background-size:100% 100%;padding:100rpx;width:550rpx;height:750rpx;"
+show="{{ isShowSing }}" 
+bind:close="onClose">
+  <view class="sign-header">签到成功</view>
+  <view class="sign-notic">连续签到可以获取更多积分哦</view>
+  <view class="sign-image">
+    <image src="https://free.liaoningdoupo.com/files/jia.png"></image>
+  </view>
+  <view class="sign-btn">获取更多积分</view>
+</van-popup>
+<van-popup 
+custom-class="home-notice" 
+closeable
+custom-style="background:url(https://free.liaoningdoupo.com/files/notic.png) no-repeat 0 0 ;margin:0 auto;background-size:100% 100%;padding:100rpx;width:855rpx;height:850rpx;"
+close-icon="close"
+show="{{ isShowNotice }}" 
+bind:close="onClose">
+  <view class="notice-header">预赛公告</view>
+  <view class="notic-box">
+    <view class="notice-gz">预赛积分规则：</view>
+    <view class="notice-rules">1.每日签到既得5分，每日一次。</view>
+    <view class="notice-rules">2.党史学习答题可得10分，一次10道，全部答对得分。每天可参与一次</view>
+    <view class="notice-rules">3.时代楷模排位对战，随机匹配选手对战，成功即得10分，失败不扣分。</view>
+    <view class="notice-rules">4.挑战时代先锋排行榜选手，挑战成功即得10分，失败扣10分</view>
+    <view class="notice-gz">预赛积分奖励：</view>
+    <view class="notice-rules">一等奖1名，二等奖3名，三等奖5名，优秀奖15名</view>
+  </view>
+</van-popup>
+
+
+<van-popup 
+custom-class="home-set" 
+closeable
+close-icon="close"
+show="{{ isShowSet }}" 
+bind:close="onClose">
+  <view class="notic-box">
+    <view class="set-header">答题设置</view>
+    <view class="body-view">
+        游戏音效<switch checked="{{audioCheck}}" bindchange="audioChange"/>
+    </view>
+  </view>
+</van-popup>
 </view>

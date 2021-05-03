@@ -1,18 +1,27 @@
-// pages/challenge/challenge.js
+// pages/exam-success/exam-success.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    isSuccess:false,//是否挑战成功
+    isTrue:false,//答题是否成功
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if (options.okCount === 1) {
+      that.setData({
+        isTrue: true,
+      });
+      this.onUserSign();
+    } else {
+      that.setData({
+        isTrue: false,
+      });
+    }
   },
 
   /**
@@ -62,5 +71,27 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  // 用户签到
+  onUserSign() {
+    const that = this;
+    const _userInfo = wx.getStorageSync('userInfo');
+    let score = -10;
+    if (that.data.isTrue){
+      score = 10;
+    }
+    wx.request({
+      url: Config.service.userScore,
+      method: 'post',
+      dataType: 'json',
+      data: { userId: _userInfo.id, score: score },
+      success: function (res) {
+        console.log(res);
+      },
+      fail: function (error) {
+        console.log('请求失败', error);
+      }
+    })
+    
+  },
 })

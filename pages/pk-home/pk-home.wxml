@@ -5,24 +5,60 @@
   <view class="pk-box">
     <view class="pk-l">
       <view class="pk-header">
-        <image src="{{userInfo[0].picture}}"></image>
+        <image src="{{picture}}"></image>
       </view>
-      <view class="pk-name">{{userInfo[0].name}}</view>
-      <view class="pk-leveal">{{userInfo[0].leveal}}</view>
-      <view class="pk-dw">段位 {{userInfo[0].dw}}</view>
-      <view class="pk-name2">{{userInfo[0].deptName}}</view>
+      <view class="pk-name">{{userInfo.name}}</view>
+      <view class="pk-leveal">{{userInfo.score}}</view>
+      <view class="pk-dw">段位 {{userInfo.dw}}</view>
+      <view class="pk-name2">{{userInfo.deptName}}</view>
     </view>
     <view class="pk-c">
       <image src="https://free.liaoningdoupo.com/files/vs2.png"></image>
     </view>
     <view  class="pk-r">
       <view class="pk-header">
-        <image src="{{userInfo[0].picture}}"></image>
+        <image src="{{picture}}"></image>
       </view>
-      <view class="pk-name">{{userInfo[0].name}}</view>
-      <view class="pk-leveal">{{userInfo[0].leveal}}</view>
-      <view class="pk-dw">段位 {{userInfo[0].dw}}</view>
-      <view class="pk-name2">{{userInfo[0].deptName}}</view>
+      <view class="pk-name">{{yourUserInfo.name}}</view>
+      <view class="pk-leveal">{{yourUserInfo.score}}</view>
+      <view class="pk-dw">段位 {{yourUserInfo.dw}}</view>
+      <view class="pk-name2">{{yourUserInfo.deptName}}</view>
     </view>
   </view>
+  <van-popup 
+    show="{{ show }}" 
+    bind:close="onClose"
+    custom-style="width:80%;height:auto;padding:50rpx;border-radius:18rpx;top:40%;background:#f5f5f5;"
+    round="true">
+    <view class="modal-body">
+      <view class="title">先锋榜排位邀请</view>
+      <view class="user">
+        <view class="user-info">
+          <view class="user-header">
+            <image src="https://free.liaoningdoupo.com/files/logo2.png"></image>
+          </view>
+          <view class="user-name">
+            <text>小商</text>
+            <text>春熙路发行</text>
+          </view>
+        </view>
+        <view class="time">20s</view>
+      </view>
+      <view class="info">小商向你发起得PK，是否迎战。</view>
+      <view class="pk-radio">
+        <van-checkbox 
+        icon-class="vant-radio" 
+        icon-size="8px" 
+        value="{{ checked }}" bind:change="radioChange">不再提醒</van-checkbox>
+      </view>
+      <view class="popup-btns">
+        <view class="no-pk">暂不应战</view>
+        <view class="go-pk">立即应战</view>
+      </view>
+      <view class="cancel">
+        <view class="go-pk">取消迎战</view>
+      </view>
+    </view>
+
+  </van-popup>
 </view>

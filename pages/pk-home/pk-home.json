@@ -1,4 +1,7 @@
 {
-  "navigationBarTitleText": "PK排位赛",
-  "usingComponents": {}
+  "navigationBarTitleText": "时代先锋PK赛",
+  "usingComponents": {
+    "van-popup": "vant-weapp/popup/index",
+    "van-checkbox": "vant-weapp/checkbox/index"
+  }
 }

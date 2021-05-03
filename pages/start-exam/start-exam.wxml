@@ -1,0 +1,10 @@
+<view class="start-exam">
+  <view class="start-box {{isStart?'tranform':''}}">
+    <view class=" line red-line"></view>
+    <view class="line blue-line"></view>
+  </view>
+  <view class="start-img {{isStart?'start-img2':''}}" bindtap="startTap">
+      <image src="https://free.liaoningdoupo.com/files/start-bg.png"></image>
+    </view>
+  <view class="start-logo"></view>
+</view>

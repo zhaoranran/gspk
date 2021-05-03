@@ -1,7 +1,6 @@
 {
-  "navigationBarTitleText": "时代先峰榜",
+  "navigationBarTitleText": "每日答题",
   "usingComponents": {
     "van-icon": "vant-weapp/icon/index"
-
   }
 }

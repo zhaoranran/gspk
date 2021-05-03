@@ -1,21 +1,20 @@
 // pages/exam/exam.js
 var App = getApp();
 const Config = require('../../config.js');
+function dateformat(second) {
+  // 分钟
+  var min = Math.floor(second / 60 % 60);
+  // 秒
+  var sec = Math.floor(second % 60);
+  return min + ':' + sec;
+}
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    exam:{
-      time: 30 * 60 * 60 * 1000,
-      examTitle:'1，【单选题】在抗日战争中，除了国内各民族团结一致之外，海 外华人华侨筹赈祖国难民总会是战时人数最多，成绩斐然的抗日 救国华侨',
-      examList:[
-        {exam:'1',id:0},
-        {exam:'士大夫',id:1},
-      ],
-    },
-    counttime: 600,
+    counttime: 180,
     queList: [],
     que: {},
     queIndex: 0,
@@ -26,7 +25,13 @@ Page({
     },
     okCount: 0,
     curQueIsOk: false,
-    availableTimes: 1,
+    time: '',
+    socketStatus: 'closed',
+    myUser: { okCount: 0,},
+    youInfo: { okCount: 0,},
+    userInfo: {},
+    yourUserInfo: {},
+    nextCount: 0,
   },
 
   /**
@@ -34,35 +39,41 @@ Page({
    */
   onLoad: function (options) {
     console.log('***************');
+    this.setData({ yourUserInfo: { openId: options.youOpenId,name: options.youName},
+      userInfo: wx.getStorageSync("userInfo"),
+    });
     this.getQueList(0);
   },
 
-  examTap(e){
+  examTap(e) {
     const that = this;
     const imgD = `${Config.fileUrl}/files/dui.png`;
     const imgC = `${Config.fileUrl}/files/cuo.png`;
     console.log(e);
-    if (e.currentTarget.dataset.code === e.currentTarget.dataset.answer){
+    if (e.currentTarget.dataset.code === e.currentTarget.dataset.answer) {
       that.setData({
         queIsTrue: { img: imgD, okNo: 'isTrue', id: e.currentTarget.dataset.id },
         curQueIsOk: true,
+        okCount: that.data.myUser.okCount + 1,
       });
+      // 发送正确消息到服务器
     } else {
       that.setData({
-        queIsTrue: { img: imgD, okNo: 'isTrue', id: e.currentTarget.dataset.id },
+        queIsTrue: { img: imgC, okNo: 'isFalse', id: e.currentTarget.dataset.id },
         curQueIsOk: false,
       });
     }
+    this.nextQueList();
   },
 
   // 获取题列表
-  getQueList(index){
+  getQueList(index) {
     const that = this;
     wx.request({
       url: Config.service.findQue,
       method: 'get',
       dataType: 'json',
-      data: { size: 30 },
+      data: { size: 18 },
       success: function (res) {
         console.log(res);
         if (res.data.code === 0) {
@@ -70,7 +81,7 @@ Page({
           console.log(index);
           that.setData({ que: res.data.data[index] });
           console.log(that.data.que);
-          that.countDown(that, 600);
+          that.countDown(that, 180);
         }
       },
       fail: function (error) {
@@ -82,38 +93,47 @@ Page({
   nextQueList() {
     const that = this;
     const index = that.data.queIndex + 1;
-    if (index === that.data.queList.length){
-      let count = 0;
-      if (that.data.okCount > 29){
-        count = 1;
+    if (index === that.data.queList.length) {
+      // 计算答题结果
+      let okCount = 0;
+      if (that.data.myUser.okCount > 15){
+        okCount = 1;
       }
       wx.navigateTo({
-        url: '../../pages/exam-success/exam-success?okCount=' + count
+        url: '../../pages/exam-success/exam-success?okCount=' + okCount
       })
       return;
     }
     that.setData({ queIndex: index });
     that.setData({ que: that.data.queList[index] });
-    if(that.data.curQueIsOk){
-      that.setData({
-        okCount: that.data.okCount + 1,
-      });
-    }
   },
   countDown(that, count) {
+    let _nextCount = that.data.nextCount + 1;
     if (count == 0) {
-      that.setData({
-        counttime: count,
-        disabled: false
+      let okCount = 0;
+      if (that.data.myUser.okCount > 15) {
+        okCount = 1;
+      }
+      wx.navigateTo({
+        url: '../../pages/exam-success/exam-success?okCount=' + okCount
       })
       return;
     }
     that.setData({
-      counttime: count
+      counttime: count,
+      nextCount: _nextCount,
+      time: dateformat(count),
     })
+    if (_nextCount === 11) {
+      that.nextQueList();
+      that.setData({
+        nextCount: 0,
+      })
+    }
     setTimeout(function () {
       count--;
       that.countDown(that, count);
     }, 1000);
   },
+
 })

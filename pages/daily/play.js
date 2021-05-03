@@ -7,12 +7,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    exam:{
+    exam: {
       time: 30 * 60 * 60 * 1000,
-      examTitle:'1，【单选题】在抗日战争中，除了国内各民族团结一致之外，海 外华人华侨筹赈祖国难民总会是战时人数最多，成绩斐然的抗日 救国华侨',
-      examList:[
-        {exam:'1',id:0},
-        {exam:'士大夫',id:1},
+      examTitle: '1，【单选题】在抗日战争中，除了国内各民族团结一致之外，海 外华人华侨筹赈祖国难民总会是战时人数最多，成绩斐然的抗日 救国华侨',
+      examList: [
+        { exam: '1', id: 0 },
+        { exam: '士大夫', id: 1 },
       ],
     },
     counttime: 600,
@@ -37,26 +37,26 @@ Page({
     this.getQueList(0);
   },
 
-  examTap(e){
+  examTap(e) {
     const that = this;
     const imgD = `${Config.fileUrl}/files/dui.png`;
     const imgC = `${Config.fileUrl}/files/cuo.png`;
     console.log(e);
-    if (e.currentTarget.dataset.code === e.currentTarget.dataset.answer){
+    if (e.currentTarget.dataset.code === e.currentTarget.dataset.answer) {
       that.setData({
         queIsTrue: { img: imgD, okNo: 'isTrue', id: e.currentTarget.dataset.id },
         curQueIsOk: true,
       });
     } else {
       that.setData({
-        queIsTrue: { img: imgD, okNo: 'isTrue', id: e.currentTarget.dataset.id },
+        queIsTrue: { img: imgC, okNo: 'isFalse', id: e.currentTarget.dataset.id },
         curQueIsOk: false,
       });
     }
   },
 
   // 获取题列表
-  getQueList(index){
+  getQueList(index) {
     const that = this;
     wx.request({
       url: Config.service.findQue,
@@ -82,19 +82,12 @@ Page({
   nextQueList() {
     const that = this;
     const index = that.data.queIndex + 1;
-    if (index === that.data.queList.length){
-      let count = 0;
-      if (that.data.okCount > 29){
-        count = 1;
-      }
-      wx.navigateTo({
-        url: '../../pages/exam-success/exam-success?okCount=' + count
-      })
+    if (index === that.data.queList.length) {
       return;
     }
     that.setData({ queIndex: index });
     that.setData({ que: that.data.queList[index] });
-    if(that.data.curQueIsOk){
+    if (that.data.curQueIsOk) {
       that.setData({
         okCount: that.data.okCount + 1,
       });

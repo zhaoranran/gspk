@@ -5,6 +5,6 @@
   <view class="text">
     恭喜您，注册成功
   </view>
-  <view class="btn">进入</view>
+  <view class="btn" bindtap="home">进入</view>
 
 </view>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "时代先峰榜",
+  "usingComponents": {
+    "van-popup": "vant-weapp/popup/index"
+  }
+}

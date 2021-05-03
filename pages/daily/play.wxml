@@ -1,21 +1,20 @@
 <view class="exam">
-  <view class="time"><text>倒计时：</text>{{counttime}}秒</view>
+  <view class="time"></view>
   <view class="exam-box">
     <view class="exam-title">{{queIndex+1}}、{{que.title}}</view>
     <view class="exam-list" wx:for="{{que.optList}}" wx:key="indx">
-      <view wx:if="{{queIsTrue.id === item.id}}" class="item {{queIsTrue.okNo}}" data-id="{{item.id}}" data-code="{{item.code}}" data-answer="{{que.answer}}"  bindtap="examTap">
+      <view wx:if="{{que.answer === item.code}}" class="item isTrue" data-id="{{item.id}}" data-code="{{item.code}}" data-answer="{{que.answer}}"  >
         <text class="round"></text>
         <van-icon size="10" custom-style="position:absolute;left:20rpx;top:27rpx;" name="{{queIsTrue.img}}" />
         {{item.name}}
       </view>
-      <view wx:else class="item " data-id="{{item.id}}" data-code="{{item.code}}" data-answer="{{que.answer}}"  bindtap="examTap">
+      <view wx:else class="item " data-id="{{item.id}}" data-code="{{item.code}}" data-answer="{{que.answer}}" >
         <text class="round"></text>
         <van-icon size="10" custom-style="position:absolute;left:20rpx;top:27rpx;" name="" />
         {{item.name}}
       </view>
     </view>
   </view>
-  <view class="exam-tip">答题时间为<text>10分钟</text>，请把我好时间</view>
   <view class="exam-btn" bindtap="nextQueList">下一题</view>
 </view>
 

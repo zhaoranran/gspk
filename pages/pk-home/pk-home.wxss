@@ -81,3 +81,76 @@
   margin-top:-184rpx;
   z-index: 2;
 }
+.title{
+  color:#444;
+  padding-bottom:20rpx;
+  border-bottom:1px solid #ccc;
+  font-weight: 600;
+  text-align: center;
+}
+.user{
+  display:flex;
+  justify-content: space-between;
+  color:#444444;
+  font-size: 30rpx;
+  line-height: 30rpx;
+  padding:30rpx 0;
+}
+.user-info{
+  display: flex;
+  justify-content: flex-start;
+
+}
+.user-name text{
+  display:block;
+  margin-top:10rpx;
+}
+.user-name text:last-child{
+  font-size:20rpx;
+}
+.user-header{
+  width:80rpx;
+  height: 80rpx;
+  margin-right: 10rpx;
+}
+.time{
+  margin-top:30rpx;
+}
+.info{
+  color:#191919;
+  font-size:30rpx;
+  /* margin-left: 40rpx; */
+  text-align: center;
+}
+.pk-radio{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size:28rpx;
+  color:#1f1f1f;
+  margin:40rpx 0 60rpx;
+}
+.popup-btns{
+  display: flex;
+  justify-content: space-between;
+}
+.cancel{
+  display: flex;
+  justify-content: center;
+}
+.popup-btns view,.cancel view{
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 25px;
+  font-size: 30rpx;
+  margin-bottom:30rpx;
+}
+.no-pk{
+  border:1px solid #ccc;
+  color:#191919;
+}
+.go-pk{
+  background: #b53f38;
+}

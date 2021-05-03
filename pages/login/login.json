@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "党史知识竞赛",
+  "navigationBarTitleText": "百年华诞知识竞赛",
   "usingComponents": {
     "van-dialog": "vant-weapp/dialog/index",
     "van-popup": "vant-weapp/popup/index",

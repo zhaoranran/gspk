@@ -1,0 +1,99 @@
+/* pages/exam/exam.wxss */
+.exam{
+  width: 100%;
+  height: 100%;
+  background:url(https://free.liaoningdoupo.com/files/bg-k.png) no-repeat 0 0;
+  background-size:100% 100%;
+  overflow:auto;
+  padding:20rpx 20rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.time{
+  color:#141313;
+  margin-bottom:20rpx;
+  font-size:32rpx;
+}
+.time text{
+  color:#535353;
+}
+.exam-logo{
+  width:50%;
+  height: 56rpx;
+}
+.exam-title{
+  margin-top: 80rpx;
+  color:#444;
+  font-size:30rpx;
+}
+.item{
+  color:#434242;
+  width:80%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background:#fff;
+  border-radius: 16rpx;
+  padding-left:30rpx;
+  margin-bottom:30rpx;
+  margin-left: 40rpx;
+  border:2px solid transparent;
+  position: relative;
+}
+.round{
+  display:inline-block;
+  width:20rpx;
+  height: 20rpx;
+  border:1px solid #ccc;
+  border-radius: 50%;
+  margin-right: 15rpx;
+}
+.isTrue{
+  border:2px solid #73dc80;
+  background:transparent;
+
+}
+.isFalse{
+  border:2px solid #dc6359;
+  background:transparent;
+}
+.exam-tip{
+  color:#333;
+  font-size: 28rpx;
+  text-align: center;
+  margin-top:80rpx;
+}
+.exam-tip text{
+  color:#b90506;
+}
+exam-btns{
+  position: absolute;
+  bottom:80rpx;
+  left:0;
+  right:0;
+}
+.exam-btn{
+  width:630rpx;
+  height: 95rpx;
+  margin-bottom:30rpx;
+  background:url(https://free.liaoningdoupo.com/files/btn1.png) no-repeat 0 0;
+  background-size:100% 100%;
+  text-align: center;
+  line-height: 95rpx;
+  color:#fff;
+  font-size: 28rpx;
+  font-weight: 500;
+}
+.exam-btn:first-child{
+  margin-top:500rpx;
+  opacity: 0.6;
+}
+.exam-list{
+  font-size:24rpx;
+  line-height:40rpx;
+  text-align: center;
+}
+.sycs{
+  font-size:28rpx;
+  text-align: center;
+}

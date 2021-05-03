@@ -1,6 +1,5 @@
 <!--pages/login/login.wxml-->
 <view class="login-content">
-  <image class="login-bg" src='../../assets/images/login-bg.png'></image>
   <view class="login-box">
     <view class="logo">
       <image src="../../assets/images/logo.png"></image>
@@ -10,8 +9,8 @@
       <text>庆祝建党100周年</text>
       <text>知识竞赛</text>
     </view>
-    <view class="register-btn" bindtap="showPopup">
-      <image src="../../assets/images/register-btn.png"></image>
+    <view class="register-btn" bindtap="showPopup" wx:if="{{registBtnShow}}">
+      <image  src="../../assets/images/register-btn.png"></image>
     </view>
   </view>
   <van-popup 
@@ -26,7 +25,8 @@
             <image src="../../assets/images/user-icon.png"></image>
           </view>
           <van-field
-            value="{{ username }}"
+            value="{{ name }}"
+            data-value="name"
             placeholder="请输入用户名"
             border="{{ false }}"
             bind:change="onChange"
@@ -37,17 +37,18 @@
           <view class="item-icon">
             <image src="../../assets/images/fx-icon.png"></image>
           </view>
-          <van-field
-            value="{{ username }}"
+          <view bindtap="getFxDate">
+            <van-field
+            value="{{ deptName }}"
             placeholder="请选择分行"
             border="{{ false }}"
             right-icon="arrow"
             readonly
-            bind:change="onChange"
             bind:click-input="getFxDate"
             bind:click-icon="getFxDate"
             placeholder-style="color:#5e5e5e;font-size:30rpx;"
           />
+          </view>
         </view>
         <view class="login-item">
           <view class="item-icon">
@@ -55,10 +56,11 @@
           </view>
           <view>
             <van-field
-            value="{{ username }}"
+            value="{{ userForm.offices }}"
+            data-value="offices"
+            bind:change="onChange"
             placeholder="请输入部门(支行)"
             border="{{ false }}"
-            bind:change="onChange"
             placeholder-style="color:#5e5e5e;font-size:30rpx;"
           />
           <text class="sub-text">（如春熙路支行）</text>
@@ -69,7 +71,7 @@
         <van-checkbox icon-class="vant-radio" icon-size="15px" value="{{ checked }}" bind:change="radioChange">我已仔细阅读并同意</van-checkbox>
           <text class="ysxy">《隐私协议》</text>
       </view>
-      <view class="login-btn">完成注册</view>
+      <view class="login-btn" bindtap="onSave">完成注册</view>
     </view>
   </van-popup>
   <van-popup
@@ -83,8 +85,9 @@
     <view class="fx-list">
       <view class="fx-item"
       wx:for="{{fxDate}}" 
-      wx:key="{{item.id}}">
-        <view>{{item.text}}</view>
+      wx:for-item="item"
+      wx:key="index">
+        <view bindtap="onSelect" data-name="{{item.name}}" data-id="{{item.id}}">{{item.name}}</view>
       </view>
     </view>
   </van-popup>

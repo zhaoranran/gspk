@@ -1,0 +1,20 @@
+<view class="exam">
+  <view class="exam-logo">
+    <image src="https://free.liaoningdoupo.com/files/logo3.png"></image>
+  </view>
+  <view class="time"></view>
+  <view class="exam-box">
+    <view class="exam-title">完成每日答题即可获得高额奖励</view>
+    <view class="exam-list">
+      全部答对可奖励10积分
+    </view>
+  </view>
+  <view class="exam-btns">
+    <view class="exam-btn" bindtap="onPlay">开始学习</view>
+    <view class="exam-btn" bindtap="startGame">开始答题</view>
+    <view class="sycs">剩余挑战: {{availableTimes}} 次数</view>
+  </view>
+  
+  
+</view>
+

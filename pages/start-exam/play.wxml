@@ -1,0 +1,27 @@
+<view class="pk-press">
+  <view class="pk-user">
+    <view class="user-l">
+      <text>{{userInfo.name}}</text>
+      <image class="user-header" src="https://free.liaoningdoupo.com/files/logo2.png"></image>
+    </view>
+    <view class="user-c">
+      <view class="time">{{time}}</view>
+    </view>
+    <view class="user-r">
+      <image class="user-header" src="https://free.liaoningdoupo.com/files/logo2.png"></image>
+      <text>{{yourUserInfo.name}}</text>
+    </view>
+  </view>
+  <view class="pk-title">
+    {{que.title}}</view>
+  <view class="pk-box">
+    <view class="press">
+      <view class="press-num" style="height:{{myUser.okCount}}0%"></view>
+    </view>
+    <view class="exam">
+      <view class="exam-item" wx:for="{{que.optList}}" wx:key="indx" data-id="{{item.id}}" data-code="{{item.code}}" data-answer="{{que.answer}}"  bindtap="examTap">{{item.name}}</view>
+    </view>
+    <view class="press" style="height:{{myUser.okCount}}0%"></view>
+  </view>
+</view>
+

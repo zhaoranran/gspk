@@ -1,17 +1,24 @@
 {
   "pages": [
-    "pages/challenge/challenge",
-    "pages/pk-press/pk-press",
-    "pages/new-date/new-date",
-    "pages/exam-success/exam-success",
-    "pages/exam/exam",
-    "pages/pk-home/pk-home",
+    "pages/login/login",
     "pages/home/home",
     "pages/register/register",
-    "pages/login/login",
+    "pages/friend/friend",
+    "pages/daily/index",
+    "pages/daily/play",
     "pages/index/index",
+    "pages/pk-home/pk-home",
+    "pages/pk-home/play",
+    "pages/exam/exam",
+    "pages/exam-success/exam-success",
+    "pages/start-exam/start-exam",
+    "pages/pk-success/pk-success",
     "pages/logs/logs"
     
+  ],
+  "requiredBackgroundModes": [
+    "audio",
+    "location"
   ],
   "window": {
     "backgroundTextStyle": "light",

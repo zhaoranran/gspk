@@ -1,0 +1,92 @@
+<view class="new-date">
+  <view class="new-list">
+    <view class="list-item" wx:for="{{onlineUserList}}" wx:key="indx">
+      <view class="item-l">
+        <text class="num">{{index+1}}</text>
+        <image src="{{topImg}}"></image>
+      </view>
+      <view class="item-r">
+        <view class="user-info">
+          <view class="info-t">
+            <view class="user-name">
+              <text>{{item.name}}</text>
+              <text class="user-font" wx:if="{{item.online === '1'}}">在线</text>
+              <text class="user-font" wx:else>离线</text>
+              <image src="https://free.liaoningdoupo.com/files/fire.png"></image>
+            </view>
+            <view class="lz">
+              来自：{{item.deptName}}
+            </view>
+          </view>
+          <view class="info-b">
+            <view class="tz" data-openid="{{item.openId}}" data-name="{{item.name}}" data-online="{{item.online}}" bindtap="addUser">发起挑战</view>
+            <view class="tz">
+              <image src="../../assets/images/start2.png"></image>0</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="logo">
+    <image src="{{footerImg}}"></image>
+  </view>
+  <van-popup 
+    show="{{ yqShow }}" 
+    bind:close="onClose"
+    custom-style="width:80%;height:auto;padding:50rpx;border-radius:18rpx;top:40%;background:#f5f5f5;"
+    round="true">
+    <view class="modal-body">
+      <view class="title">先锋榜排位邀请</view>
+      <view class="user">
+        <view class="user-info2">
+          <view class="user-header">
+            <image src="https://free.liaoningdoupo.com/files/logo2.png"></image>
+          </view>
+          <view class="user-name2">
+            <text>{{userInfo.name}}</text>
+            <text>{{userInfo.deptName}}</text>
+          </view>
+        </view>
+        <view class="time"></view>
+      </view>
+      <view class="info">正在向"{{yourUser.name}}"发起排位PK挑战</view>
+      <view class="cancel">
+        <view class="go-pk" bindtap="cancleYq">取消迎战</view>
+      </view>
+    </view>
+
+  </van-popup>
+  <van-popup 
+    show="{{ yzShow }}" 
+    bind:close="onClose"
+    custom-style="width:80%;height:auto;padding:50rpx;border-radius:18rpx;top:40%;background:#f5f5f5;"
+    round="true">
+    <view class="modal-body">
+      <view class="title">先锋榜排位邀请</view>
+      <view class="user">
+        <view class="user-info2">
+          <view class="user-header">
+            <image src="https://free.liaoningdoupo.com/files/logo2.png"></image>
+          </view>
+          <view class="user-name2">
+            <text>{{userInfo.name}}</text>
+            <text>{{userInfo.deptName}}</text>
+          </view>
+        </view>
+        <view class="time"></view>
+      </view>
+      <view class="info">{{showUserInfo.name}}向你发起得PK，是否迎战。</view>
+      <view class="pk-radio">
+        <van-checkbox 
+        icon-class="vant-radio" 
+        icon-size="8px" 
+        value="{{ checked }}" bind:change="radioChange">不再提醒</van-checkbox>
+      </view>
+      <view class="popup-btns">
+        <view class="no-pk">暂不应战</view>
+        <view class="go-pk">立即应战</view>
+      </view>
+    </view>
+
+  </van-popup>
+</view>
